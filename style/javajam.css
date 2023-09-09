@@ -1,0 +1,171 @@
+body {
+	background-color: #F1E8B0;
+	color: #330000;
+	font-family: Verdana, Arial, sans-serif;
+	min-width: 800px;
+	width: 80%;
+	margin:auto;
+
+}
+
+#logo {
+	background-color:#ccaa66;
+	color: #000000;
+	text-align:center;
+	margin: 0;
+}
+
+#nav {
+	float: left;
+	width: 100px;
+	padding-top: 10px;
+	text-align:center; 
+}
+
+#nav li {
+	list-style-type:none;
+	padding-left: 0;
+}
+
+#nav a {
+	text-decoration:none;
+	font-size:large;
+	font-weight: bold;
+}
+
+#nav a:link { 
+	color: #CCAA66; 
+}
+
+#nav a:visited {
+	color: #996633; 
+}
+
+#nav a:focus { 
+	color: #ffffcc; 
+	background-color:#996633;
+}
+			   
+#nav a:hover {
+	color: #000000; 
+}
+
+#nav a:active { 
+	color: #231D39; 
+}
+
+#content {
+	margin-left: 150px;
+	background-color: #ffffcc;
+	color:#000000;
+	padding: 10px 20px;
+	overflow:auto;
+	font-size: 18px; 
+}
+
+.menu {
+	margin:auto;
+}
+
+#content td, th {
+	padding: 10px; 
+}
+
+.music-table th{
+	background-color:#F1E8B0;
+	padding-right: 90%;
+	text-transform: uppercase;
+}
+
+.floatleft {
+	padding-left:40px;
+	padding-right: 50px;
+	float:left;
+	margin-right: 20px; 
+}
+
+#footer { 
+	background-color:#ccaa66;
+	color:#000000;
+	font-size: .60em;
+	font-style: italic;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+h2 { 
+	text-transform: uppercase;
+	background-color: #ffffcc;
+	color: #230a01;
+	font-size: 1.2em;
+	border-bottom: 1px solid #000000;
+	margin-right: 20px;
+}
+#content h2{
+	color:#230a01;
+	font-size: 30px;
+	background-color: transparent;
+	border: none;
+	text-transform: none;
+}
+.details {
+	padding-left:20%;
+	padding-right:20%; 
+}
+
+img {
+	border:0; 
+}
+
+
+#content table {
+	margin:auto;
+}
+
+.altrow { 
+	background-color:#CCAA66;
+}
+
+.labelCol { 
+	float: left;
+	width:150px;  
+	text-align: right;
+	padding-right: 10px;
+}
+
+.myRow { 
+	padding-bottom: 20px;
+}
+
+.mySubmit { 
+	margin: 10px;
+} 
+
+#crumbs{
+	font-size: .60em;
+	color: #e69623;
+
+}
+
+#content ul {
+    list-style-image: url(../images/cup.jpg); 
+    padding-left: 25px; 
+	margin-bottom: 0;
+	margin-top: 0;
+    font-size: 18px; 
+    line-height: 1.4; 
+    display: inline-block; 
+}
+
+#address {
+    margin-left: 40px; 
+}
+
+#inline-paragraph{
+	margin-left: 0;
+}
+
+.inline-content {
+    margin: 0;
+}
