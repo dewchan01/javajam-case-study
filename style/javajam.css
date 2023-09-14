@@ -81,7 +81,6 @@ body {
 	padding-left:40px;
 	padding-right: 50px;
 	float:left;
-	margin-right: 20px; 
 }
 
 #footer { 
@@ -150,13 +149,15 @@ img {
 
 #content ul {
     list-style-image: url(../images/cup.jpg); 
-	padding: 0 0;
     font-size: 18px; 
     line-height: 1.4; 
+	padding-left: 410px;
 }
 
 #address {
-    padding-left: 380px; 
+	margin-right: 0;
+	width: 200px;
+    margin-left: 390px;
 }
 
 #inline-paragraph{
