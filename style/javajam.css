@@ -1,5 +1,5 @@
 body {
-	background-color: #F1E8B0;
+	background-color: #ede2a9;
 	color: #330000;
 	font-family: Verdana, Arial, sans-serif;
 	min-width: 800px;
@@ -14,12 +14,19 @@ body {
 	text-align:center;
 	margin: 0;
 }
+#wrapper {
+    position: relative; /* Relative positioning for the wrapper */
+}
 
 #nav {
 	float: left;
-	width: 100px;
+	width: 150px;
 	padding-top: 10px;
-	text-align:center; 
+	background-color: #e2d2b0;
+	position: absolute; /* Position it relative to the wrapper */
+	top: 0; /* Extend from the top */
+	bottom: 0; /* Extend to the bottom */
+
 }
 
 #nav li {
@@ -56,7 +63,7 @@ body {
 
 #content {
 	margin-left: 150px;
-	background-color: #ffffcc;
+	background-color: #f5f5dc;
 	color:#000000;
 	padding: 10px 20px;
 	overflow:auto;
