@@ -1,4 +1,4 @@
-let qtyToPrice = {"justJavaQty" :2.00,"cafeQty" : 2.00, "cappQty" : 4.75};
+let qtyToPrice = {};
 let itemPrices = {};
 
 function setPrice(priceId,qtyId,totalId)
@@ -11,10 +11,17 @@ function setPrice(priceId,qtyId,totalId)
 function calculateSubTotal(qtyId,totalId){
     let quantityInput = document.getElementById(qtyId);
     let quantity = parseInt(quantityInput.value,10);
-    let subTotalPrice = quantity*qtyToPrice[qtyId];
-    itemPrices[qtyId]=subTotalPrice;
-    document.getElementById(totalId).value= subTotalPrice.toFixed(2);
-    calculateTotal();
+    if (!(qtyId in qtyToPrice))
+    {
+        document.getElementById(totalId).value = "Please Select a Price."
+    }
+    else
+    {    
+        let subTotalPrice = quantity*qtyToPrice[qtyId];
+        itemPrices[qtyId]=subTotalPrice;
+        document.getElementById(totalId).value= subTotalPrice.toFixed(2);
+        calculateTotal();
+    }
 }
 
 function calculateTotal()

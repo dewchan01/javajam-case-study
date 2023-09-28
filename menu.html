@@ -27,7 +27,7 @@
             <tr class="altrow">
                 <th>Just Java</th>
                 <td>Regular house blend, decaffeinated coffee, or flavor of the day.<br />
-                    <input type="radio" name="justJavaPrice" id="justJavaPrice" value="2.00" checked/> <strong>Endless Cup $2.00</strong>
+                    <input type="radio" name="justJavaPrice" id="justJavaPrice" value="2.00" onclick="setPrice('justJavaPrice','justJavaQty','justJavaTotal')"/> <strong>Endless Cup $2.00</strong>
                 </td>
                 <td>
                     Quantity: <input type="number" name="justJavaQty" id="justJavaQty" min="0" value="0" placeholder="Enter the quantity" required onchange="calculateSubTotal('justJavaQty','justJavaTotal')"/>
@@ -39,7 +39,7 @@
             <tr>
                 <th>Cafe au Lait</th>
                 <td>House blended coffee infused into a smooth, steamed milk.<br />
-                    <input type="radio" name="cafePrice" id="cafePrice1" value="2.00" checked onclick="setPrice('cafePrice1','cafeQty','cafeTotal')"/><strong>Single $2.00</strong>
+                    <input type="radio" name="cafePrice" id="cafePrice1" value="2.00" onclick="setPrice('cafePrice1','cafeQty','cafeTotal')"/><strong>Single $2.00</strong>
                     <input type="radio" name="cafePrice" id="cafePrice2" value="4.00" onclick="setPrice('cafePrice2','cafeQty','cafeTotal')"/><strong>Double $4.00</strong>
                 </td>
                 <td>
@@ -51,8 +51,8 @@
             </tr>
             <tr class="altrow">
                 <th>Iced Cappuccino</th>
-                <td>Sweetened espresso blended with icy-cold milk and served in a chilled glass.
-                    <input type="radio" name="cappPrice" id="cappPrice1" value="4.75" checked onclick="setPrice('cappPrice1','cappQty','cappTotal')"/><strong>Single $4.75</strong>
+                <td>Sweetened espresso blended with icy-cold milk and served in a chilled glass.<br>
+                    <input type="radio" name="cappPrice" id="cappPrice1" value="4.75" onclick="setPrice('cappPrice1','cappQty','cappTotal')"/><strong>Single $4.75</strong>
                     <input type="radio" name="cappPrice" id="cappPrice2" value="5.75" onclick="setPrice('cappPrice2','cappQty','cappTotal')"/><strong>Double $5.75</strong>
                 </td>
                 <td>
