@@ -4,6 +4,7 @@
 <head>
     <title>JavaJam Coffee House</title>
     <link href="style/javajam.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="scripts/calculate_price.js"></script>
     <meta charset="utf-8">
 </head>
 
@@ -26,20 +27,48 @@
             <tr class="altrow">
                 <th>Just Java</th>
                 <td>Regular house blend, decaffeinated coffee, or flavor of the day.<br />
-                    <strong>Endless Cup $2.00 </strong>
+                    <input type="radio" name="justJavaPrice" id="justJavaPrice" value="2.00" onclick="setPrice('justJavaPrice','justJavaQty','justJavaTotal')"/> <strong>Endless Cup $2.00</strong>
+                </td>
+                <td>
+                    Quantity: <input type="number" name="justJavaQty" id="justJavaQty" min="0" value="0" placeholder="Enter the quantity" required onchange="calculateSubTotal('justJavaQty','justJavaTotal')"/>
+                </td>
+                <td>
+                    Sub-Total: <input type="text" name="justJavaTotal" id="justJavaTotal" readonly value="0.00"/>
                 </td>
             </tr>
             <tr>
                 <th>Cafe au Lait</th>
                 <td>House blended coffee infused into a smooth, steamed milk.<br />
-                    <strong>Single $2.00 Double $4.00</strong>
+                    <input type="radio" name="cafePrice" id="cafePrice1" value="2.00" onclick="setPrice('cafePrice1','cafeQty','cafeTotal')"/><strong>Single $2.00</strong>
+                    <input type="radio" name="cafePrice" id="cafePrice2" value="4.00" onclick="setPrice('cafePrice2','cafeQty','cafeTotal')"/><strong>Double $4.00</strong>
+                </td>
+                <td>
+                    Quantity: <input type="number" name="cafeQty" id="cafeQty" min="0" value="0" placeholder="Enter the quantity" required onchange="calculateSubTotal('cafeQty','cafeTotal')"/>
+                </td>
+                <td>
+                    Sub-Total: <input type="text" name="cafeTotal" id="cafeTotal" readonly value="0.00"/>
                 </td>
             </tr>
             <tr class="altrow">
                 <th>Iced Cappuccino</th>
-                <td>Sweetened espresso blended with icy-cold milk and served in a chilled glass.
-                    <br><strong>Single $4.75 Double $3.75</strong>
+                <td>Sweetened espresso blended with icy-cold milk and served in a chilled glass.<br>
+                    <input type="radio" name="cappPrice" id="cappPrice1" value="4.75" onclick="setPrice('cappPrice1','cappQty','cappTotal')"/><strong>Single $4.75</strong>
+                    <input type="radio" name="cappPrice" id="cappPrice2" value="5.75" onclick="setPrice('cappPrice2','cappQty','cappTotal')"/><strong>Double $5.75</strong>
                 </td>
+                <td>
+                    Quantity: <input type="number" name="cappQty" id="cappQty" min="0" value="0" placeholder="Enter the quantity" required onchange="calculateSubTotal('cappQty','cappTotal')"/>
+                </td>
+                <td>
+                    Sub-Total: <input type="text" name="cappTotal" id="cappTotal" readonly value="0.00"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: right;">
+                    Total Price:
+                </td>
+                <td colspan="2">
+                    <input type="number" name="totalPrice" id="totalPrice" readonly value="0.00"/>
+                </td> 
             </tr>
         </table>
         </div>
