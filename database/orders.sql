@@ -1,0 +1,9 @@
+CREATE TABLE orders
+(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    productName TEXT,
+    category TEXT,
+    quantity VARCHAR(50) NOT NULL,
+    price VARCHAR(100) NOT NULL
+);

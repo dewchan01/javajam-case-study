@@ -53,10 +53,10 @@ $conn->close();
     </header>
     <div id="wrapper">
     <div id="nav">
-        <ul>
-            <li>Product</li>
-            <li>Price</li>
-            <li>Update</li>
+    <ul>
+            <li><a href="edit_products.php">Product <br> Prices <br> Update</a></li>
+            <br>
+            <li><a href="report.php">Daily <br> Sales <br> Report</a></li>
         </ul>
     </div>
     <div id="content">
