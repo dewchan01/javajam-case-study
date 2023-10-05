@@ -25,6 +25,7 @@ $resultProducts = $conn->query($products);
     <link href="style/javajam.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="scripts/calculate_price.js"></script>
     <meta charset="utf-8">
+    
 </head>
 
 <body>
@@ -73,7 +74,7 @@ $resultProducts = $conn->query($products);
                 <td colspan="3" style="text-align:right">
                     Total Price:
                     <input type="number" name="totalPrice" id="totalPrice" readonly value="0.00"/>
-                    <input type="submit" name="checkout" id="checkout" value="Checkout"/>
+                    <input type="submit" name="checkout" id="checkout" value="Checkout" disabled/>
                 </td> 
         </table>
         </form>
@@ -83,6 +84,6 @@ $resultProducts = $conn->query($products);
             <a href="mailto:dewei@chan.com">dewei@chan.com</a>
         </div>
 
-</body>
+</body> 
 
 </html>
