@@ -54,8 +54,8 @@ $resultProducts = $conn->query($products);
                     echo "<th>". $row["productName"] ."</th>";
                     echo "<td>". $row["productDescription"]."<br/>";
                     if ($row["doubleProductPrice"]) {
-                        echo "<input type='radio' name='" . $row["productName"] . "SinglePrice' id='" . $row["productName"] . "Price1' value='" . $row["singleProductPrice"] . "' onclick=\"setPrice('".$row["productName"]."Price1','".$row["productName"]."Qty','".$row["productName"]."Total')\" /><strong>Single ".number_format($row["singleProductPrice"], 2)."</strong>";
-                        echo "<input type='radio' name='" . $row["productName"] . "DoublePrice' id='" . $row["productName"] . "Price2' value='" . $row["doubleProductPrice"] . "' onclick=\"setPrice('".$row["productName"]."Price2','".$row["productName"]."Qty','".$row["productName"]."Total')\"/><strong>Double ".number_format($row["doubleProductPrice"], 2)."</strong>";
+                        echo "<input type='radio' name='" . $row["productName"] . "Price' id='" . $row["productName"] . "Price1' value='" . $row["singleProductPrice"] . "' onclick=\"setPrice('".$row["productName"]."Price1','".$row["productName"]."Qty','".$row["productName"]."Total')\" /><strong>Single ".number_format($row["singleProductPrice"], 2)."</strong>";
+                        echo "<input type='radio' name='" . $row["productName"] . "Price' id='" . $row["productName"] . "Price2' value='" . $row["doubleProductPrice"] . "' onclick=\"setPrice('".$row["productName"]."Price2','".$row["productName"]."Qty','".$row["productName"]."Total')\"/><strong>Double ".number_format($row["doubleProductPrice"], 2)."</strong>";
                     } else {
                         echo "<input type='radio' name='" . $row["productName"] . "Price' id='" . $row["productName"] . "Price' value='" . $row["singleProductPrice"] . "' onclick=\"setPrice('".$row["productName"]."Price','".$row["productName"]."Qty','".$row["productName"]."Total')\"/><strong>Endless Cup ".number_format($row["singleProductPrice"], 2)."</strong>";
                     }
