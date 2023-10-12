@@ -25,16 +25,17 @@
         <h2>Jobs at JavaJam</h2>
         <p>Want to work at JavaJam? Fill out the form below to begin your application.Required fields are marked with asterisk *</p>
         <form method="post" action="scripts/show_post.php" onsubmit="return validateForm()">
-            
             <div class="myRow">
-                <label class="labelCol" for="myName">*Name:</label><input type="text" name="myName" id="myName" placeholder="Enter your name here" required/>
+                <label class="labelCol" for="myName">*Name:</label>
+                <input type="text" name="myName" id="myName" placeholder="Enter your name here" required onblur="validateName(this)" />
             </div>
             <div class="myRow">
-                <label class="labelCol" for="myEmail">*E-mail:</label><input type="email" name="myEmail" id="myEmail" placeholder="Enter your email here" required/>
+                <label class="labelCol" for="myEmail">*E-mail:</label>
+                <input type="email" name "myEmail" id="myEmail" placeholder="Enter your email here" required onblur="validateEmail(this)" />
             </div>
             <div class="myRow">
-                <label class="labelCol"  for="demo1" for="startDate">Start Date:</label>
-                <input type="date" name="startDate" id="startDate"/>
+                <label class="labelCol" for="startDate">Start Date:</label>
+                <input type="date" name="startDate" id="startDate" onblur="validateStartDate(this)" />
             </div>
             <div class="myRow">
                 <label class="labelCol" for="myExperience">*Experience:</label>
@@ -47,6 +48,8 @@
                 <input type="submit" value="Apply Now" />
             </div>
         </form>
+        
+        
         </div>
         </div>
         <div id="footer">Copyright &copy; 2014 JavaJam Coffeee House<br />

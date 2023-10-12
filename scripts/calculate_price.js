@@ -13,6 +13,9 @@ function calculateSubTotal(qtyId, totalId) {
     if (!(qtyId in qtyToPrice)) {
         document.getElementById(totalId).value = "Please Select a Price."
     }
+    else if (quantity<0){
+        alert("Quantity must be greater than or equal to 0");
+    }
     else {
         let subTotalPrice = quantity * qtyToPrice[qtyId];
         itemPrices[qtyId] = subTotalPrice;
