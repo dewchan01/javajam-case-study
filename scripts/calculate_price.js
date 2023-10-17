@@ -38,3 +38,13 @@ function calculateTotal() {
         checkoutButton.disabled = false;
     }
 }
+
+function handleRadio(productName,selectedRadio){
+    const radios = document.querySelectorAll('[name^="' + productName+ '"]');
+    radios.forEach(function(radio){
+        if(radio !==selectedRadio){
+        radio.checked=false;
+        }
+    });
+        
+}
