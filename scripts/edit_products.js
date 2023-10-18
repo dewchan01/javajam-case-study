@@ -30,3 +30,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+function validateInput(input){
+    if(input.value<=0){
+        alert("Price cannot be negative or 0");
+        input.value=1;
+    }
+}

@@ -73,10 +73,10 @@ $conn->close();
                     echo "<td>". $row["productDescription"]."<br/>";
                     echo $row["doubleProductPrice"] ? "<strong>Single ".number_format($row["singleProductPrice"], 2)." Double ".number_format($row["doubleProductPrice"], 2)."</strong><br>" : "<strong>Endless Cup ".number_format($row["singleProductPrice"], 2)."</strong><br>";
                     echo "<form id='textbox".$count."' ,action='edit_products.php' method ='POST' style='display: none;'>";
-                    echo "<input type='number' min='0' step='0.01' name='singleProduct".$count."' value='".$row["singleProductPrice"]."'/>";
+                    echo "<input type='number' min='0.01' step='0.01' name='singleProduct".$count."' value='".$row["singleProductPrice"]."' onblur=\"validateInput(this)\"/>";
                     if($row["doubleProductPrice"])
                     {
-                        echo "<input type='number' min='0' step='0.01' name='doubleProduct".$count."' value='".$row["doubleProductPrice"]."'/>";
+                        echo "<input type='number' min='0.01' step='0.01' name='doubleProduct".$count."' value='".$row["doubleProductPrice"]."' onblur=\"validateInput(this)\"/>";
                     }
                     echo "<button type='submit' name='edit".$count."'>Submit</button> ";
                     echo "</form></td></tr>";
