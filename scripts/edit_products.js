@@ -32,8 +32,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function validateInput(input){
-    if(input.value<=0){
-        alert("Price cannot be negative or 0");
-        input.value=1;
+    let pricePattern =/^[0-9]^/
+    if(!input.value.match(pricePattern) || input.value<=0){
+        alert("Price cannot be negative, 0 or invalid input");
+        input.value=0.01;
     }
 }

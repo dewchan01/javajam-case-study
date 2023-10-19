@@ -24,14 +24,14 @@
     <div id="content">
         <h2>Jobs at JavaJam</h2>
         <p>Want to work at JavaJam? Fill out the form below to begin your application.Required fields are marked with asterisk *</p>
-        <form method="post" action="scripts/show_post.php" onsubmit="return validateForm()">
+        <form method="post" action="scripts/show_post.php">
             <div class="myRow">
                 <label class="labelCol" for="myName">*Name:</label>
                 <input type="text" name="myName" id="myName" placeholder="Enter your name here" required onblur="validateName(this)" />
             </div>
             <div class="myRow">
                 <label class="labelCol" for="myEmail">*E-mail:</label>
-                <input type="email" name "myEmail" id="myEmail" placeholder="Enter your email here" required onblur="validateEmail(this)" />
+                <input type="email" name= "myEmail" id="myEmail" placeholder="Enter your email here" required onblur="validateEmail(this)" />
             </div>
             <div class="myRow">
                 <label class="labelCol" for="startDate">Start Date:</label>
@@ -45,7 +45,7 @@
                 <input type="reset" value="Clear" />
             </div>
             <div class="mySubmit">
-                <input type="submit" value="Apply Now" />
+                <input type="submit" value="Apply Now"/>
             </div>
         </form>
         
