@@ -3,6 +3,7 @@ function validateName(input) {
     var namePattern = /^[A-Za-z\s]+/;
     if (!value.match(namePattern)) {
         alert("Name must contain only alphabet characters and spaces.");
+        input.value = '';
     }
 }
 
@@ -18,6 +19,7 @@ function validateEmail(input) {
         } else {
             alert("Invalid email address. The last extension should end with 2-3 characters (e.g., example@example.com).");
         }
+        input.value = '';
     }
 }
 
@@ -29,5 +31,6 @@ function validateStartDate(input) {
 
     if (startDate <= today) {
         alert("Start date must be in the future.");
+        input.value = '';
     }
 }

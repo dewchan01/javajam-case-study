@@ -21,6 +21,9 @@ function calculateSubTotal(qtyId, totalId) {
     else {
         let subTotalPrice = quantity * qtyToPrice[qtyId];
         itemPrices[qtyId] = subTotalPrice;
+        if(isNaN(subTotalPrice)){
+            subTotalPrice=0;
+        }
         document.getElementById(totalId).value = subTotalPrice.toFixed(2);
         calculateTotal();
     }
@@ -51,7 +54,8 @@ function handleRadio(productName,selectedRadio){
 
 }
 function validateInput(input){
-    if(input.value<0 || input.value==="-0"){
+    let qtyPattern = /^[0-9]+/;
+    if(!input.value.match(qtyPattern)){
         alert("Price cannot be negative or invalid input");
         input.value=0;
     }
