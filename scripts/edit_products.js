@@ -32,9 +32,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function validateInput(input){
-    let pricePattern =/^[0-9]^/
+    let pricePattern =/^\d+(\.\d{1,2})?$/
     if(!input.value.match(pricePattern) || input.value<=0){
-        alert("Price cannot be negative, 0 or invalid input");
+        alert("Invalid input! Price cannot be negative or 0, max 2 decimal places allowed.");
         input.value=0.01;
     }
 }

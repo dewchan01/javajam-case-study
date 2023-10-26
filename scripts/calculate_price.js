@@ -54,7 +54,7 @@ function handleRadio(productName,selectedRadio){
 
 }
 function validateInput(input){
-    let qtyPattern = /^[0-9]+/;
+    let qtyPattern = /^\d+/;
     if(!input.value.match(qtyPattern)){
         alert("Price cannot be negative or invalid input");
         input.value=0;
