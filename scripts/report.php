@@ -11,6 +11,15 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+$dateInput = new DateTime(); 
+
+if (!empty($_POST["date"])) {
+    $dateInput = new DateTime($_POST["date"]);
+    
+}
+
+$dateInput = $dateInput->format('Y-m-d');
+
 $productsql = "SELECT
     DATE(time) AS day,
     productName,
@@ -18,6 +27,8 @@ $productsql = "SELECT
     SUM(CAST(price AS DECIMAL(10,2))) AS totalPrice
 FROM
     orders
+WHERE
+    DATE(time) = '$dateInput'
 GROUP BY
     day, productName";
 
@@ -29,20 +40,29 @@ $categorysql = "SELECT
     SUM(CAST(price AS DECIMAL(10,2))) AS totalPrice
 FROM
     orders
+WHERE
+    DATE(time) = '$dateInput'
 GROUP BY
     day, category";
 
-$bestsellsql = "SELECT
-    category, 
-    productName,
-    SUM(quantity) AS totalQuantity
-FROM
-    orders
-GROUP BY
-    category, productName
-ORDER BY
-    totalQuantity DESC
-LIMIT 1";
+$bestsellsql = "SELECT category, SUM(quantity) AS totalQuantity, productName
+FROM orders
+WHERE productName = (
+    SELECT productName
+    FROM (
+        SELECT productName, SUM(CAST(price AS DECIMAL(10,2))) AS totalPrice
+        FROM orders
+        GROUP BY productName
+        ORDER BY totalPrice DESC
+        LIMIT 1
+    ) AS highest_price_product
+) AND DATE(time) = '$dateInput'
+GROUP BY category
+ORDER BY 
+    totalQuantity DESC,category = 'Double' DESC
+LIMIT 1;
+";
+
 
 $productresult = $conn->query($productsql);
 $categoryresult = $conn->query($categorysql);
@@ -66,6 +86,7 @@ $conn->close();
     </header>
     <div id="wrapper">
         <div id="nav">
+
             <ul>
                 <li><a href="edit_products.php">Product <br> Prices <br> Update</a></li>
                 <br>
@@ -74,6 +95,10 @@ $conn->close();
         </div>
         <div id="content">
             <h3>Click to generate daily sales report:</h3>
+            <form action="report.php" method="post" id = "reportForm">
+            <label class="labelCol" for="date">Date:</label>
+            <input type="date" name="date" id="date" onchange="submitForm(this)" value = "<?php echo isset($_POST["date"]) ? $_POST["date"] : date('Y-m-d'); ?>">
+            </form>
             <table class = "menu" summary="The table has three rows and two columns. Each row describes a featured menu item.">
             <tr>
                 <td><input type='radio' name='reportType' id='byProducts' value='byProducts' onclick=generateReport(this.value)></td>
@@ -130,6 +155,7 @@ $conn->close();
             if ($bestsellresult->num_rows > 0) {
                 while ($row = $bestsellresult->fetch_assoc()) {
                     echo $row["category"] !=='Endless Cup' ? $row["productName"] . " (" . $row["category"] . ")" :  $row["productName"] . " (Null)";
+
                 }
             } else {
                 echo "No results found.";
