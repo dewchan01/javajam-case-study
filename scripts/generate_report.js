@@ -7,14 +7,3 @@ function generateReport(reportType) {
         document.getElementById("reportResultByCategories").style.display = "block";
     }
 }
-function submitForm(input) {
-        var value = input.value;
-        var startDate = new Date(value);
-        var today = new Date();
-    
-        if (startDate >= today) {
-            alert("Selected date must be in the past or today.");
-        }
-    
-    document.getElementById("reportForm").submit();
-}

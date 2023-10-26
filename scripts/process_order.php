@@ -13,6 +13,7 @@ if($conn->connect_error){
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     foreach ($_POST as $key => $value) {
+
         // Check if the key contains "Qty" to identify quantity fields
         if (strpos($key, "Qty") !== false) {
             // Extract the product name from the key
